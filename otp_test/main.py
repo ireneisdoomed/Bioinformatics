@@ -16,7 +16,7 @@ def parsing():
     group.add_argument("-d", dest="disease", type=str, help="The ID of the disease for which you want to do the analysis.")
 
     # Optional arguments
-    parser.add_argument("-e", dest="export", type=str, default="output.json", nargs="?", help="JSON filename from the exported query result. Default name: output.json.")
+    parser.add_argument("-e", dest="export", type=str, help="JSON filename from the exported query result.")
     parser.add_argument("-m", dest="minimum", type=float, help="Minimum score value to filter associations with lower quality data points.")
 
     args = parser.parse_args()
@@ -69,8 +69,6 @@ def main():
     if args.export:
         export(data, args.export)
 
-    print(type)
-    print(args.target)
     return mean, highest, lowest, stdev
 
 

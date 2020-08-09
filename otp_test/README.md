@@ -33,7 +33,7 @@ The command-line program admits two different parameters for analysis:
 
 It also supports two other optional parameters:
 
-- -e: Exports the result of the query to JSON format. You can indicate the filename, default is set to *output.json*.
+- -e: Exports the result of the query to JSON format. You have to indicate the output filename.
 - -m: Minimum score value to filter associations with a certain quality data point. Default is set to 0. Scores above 0.2 is a good trade-off
   
 An example of the usage may be:
