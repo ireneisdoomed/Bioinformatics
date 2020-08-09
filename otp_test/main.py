@@ -23,7 +23,9 @@ def parsing():
 def main():
     args = parsing()
 
-    data = query(args.disease, scorevalue_min=args.minimum)
+    # "type" defines the query parameter to differentiate between disease and target ID
+    type = "disease" if args.disease else "target"
+    data = query(type, args.disease, scorevalue_min=args.minimum)
 
     # stdout prints for every association
     for record in data.values():
@@ -35,7 +37,9 @@ def main():
     highest = np.max(scores)
     lowest = np.min(scores)
     stdev = np.std(scores)
+
     print("-------------------------------------")
+    print(f"{len(scores)} associations have been found for this {type} ID.\n")
     print(f"""Association score values:
     Average score: {mean}
     Maximum score: {highest}
@@ -51,4 +55,6 @@ def main():
 
 
 if __name__ == "__main__":
+    print("-----------------------------------------------")
+    print("Welcome! Here's how to fetch associations from the Open Targets Platform.")
     main()

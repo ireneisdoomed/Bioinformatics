@@ -1,11 +1,11 @@
 import requests
 import json
 
-def query(disease, scorevalue_min=0):
+def query(type, id, scorevalue_min=0):
 
     url = "https://platform-api.opentargets.io/v3/platform/public/association/filter"
 
-    params = {"disease": disease,
+    params = {type: id,
             "size": "10000",
             "direct": "True",
             "scorevalue_min": scorevalue_min}
@@ -23,3 +23,4 @@ def query(disease, scorevalue_min=0):
 def export(dictionary, filename):
     with open(filename, "w") as outfile:  
         json.dump(dictionary, outfile) 
+
