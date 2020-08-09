@@ -37,8 +37,13 @@ def main():
     args = parsing()
 
     # "type" defines the query parameter to differentiate between disease and target ID
-    type = "disease" if args.disease else "target"
-    data = query(type, args.disease, scorevalue_min=args.minimum)
+    if args.disease:
+        type = "disease"
+        data = query(type, args.disease, scorevalue_min=args.minimum)
+    elif args.target:
+        type = "target"
+        data = query(type, args.target, scorevalue_min=args.minimum)
+
     assert len(data), "A problem ocurred with the query. Please check that the ID provided is correct."
     
     # stdout prints for every association
@@ -64,7 +69,8 @@ def main():
     if args.export:
         export(data, args.export)
 
-
+    print(type)
+    print(args.target)
     return mean, highest, lowest, stdev
 
 

@@ -1,14 +1,14 @@
 
 # Get Association Scores from the Open Targets Platform
 
-Welcome! Small application to fetch the association scores for a given target or disease ID.
+Welcome! This is a small application to fetch the association scores for a given target or disease ID.
 
 For any given target or disease ID this package allows you to:
 
 1. Store into a JSON file the target-disease association information resulting from the query.
 2. See a simple analysis of the scores indicating the maximum, minimum and average and standard deviation values of the overall association scores of each target or disease.
 
-This package accesses the Open Targets Platform REST API data, more precisely from its association endpoint. You can see their [documentation](https://docs.targetvalidation.org/programmatic-access/rest-api) for more information. 
+This package accesses the **Open Targets Platform REST API** data, more precisely from its association endpoint. You can see their [documentation](https://docs.targetvalidation.org/programmatic-access/rest-api) for more information. 
 
 ## Installation 
 
