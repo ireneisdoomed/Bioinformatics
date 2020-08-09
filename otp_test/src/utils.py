@@ -43,7 +43,7 @@ def export(dictionary, filename):
     Returns:
     None
     '''
-    
+
     with open(filename, "w") as outfile:  
         json.dump(dictionary, outfile) 
 
